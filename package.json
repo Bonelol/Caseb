@@ -1,9 +1,10 @@
 {
     "name": "caseb",
     "displayName": "Caseb",
-    "description": "Convert keywords to UPPERCASE",
-    "version": "0.1.0",
-    "publisher": "MaxMeng",
+    "description": "Convert SQL keywords to UPPERCASE",
+    "version": "0.2.0",
+    "publisher": "bonelol",
+    "repository": "https://github.com/Bonelol/Caseb",
     "engines": {
         "vscode": "^1.26.0",
         "sqlops": "*"
@@ -16,11 +17,29 @@
     ],
     "main": "./out/extension",
     "contributes": {
+        "languages": [
+            {
+                "id": "sql",
+                "extensions": [
+                    ".sql"
+                ],
+                "aliases": [
+                    "SQL"
+                ]
+            }
+        ],
         "commands": [
             {
                 "command": "extension.caseb.uppercase",
-                "title": "Convert keywords to UPPERCASE",
+                "title": "Convert To Uppercase",
                 "key": "alt+u"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "extension.caseb.uppercase",
+                "key": "alt+u",
+                "when": "editorTextFocus && editorLangId == 'sql'"
             }
         ]
     },
