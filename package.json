@@ -1,0 +1,46 @@
+{
+    "name": "caseb",
+    "displayName": "Caseb",
+    "description": "Convert keywords to UPPERCASE",
+    "version": "0.1.0",
+    "publisher": "MaxMeng",
+    "engines": {
+        "vscode": "^1.26.0",
+        "sqlops": "*"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:extension.caseb.uppercase"
+    ],
+    "main": "./out/extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.caseb.uppercase",
+                "title": "Convert keywords to UPPERCASE",
+                "key": "alt+u"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install && node ./node_modules/sqlops/bin/install",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.6",
+        "sqlops": "github:anthonydresser/sqlops-extension-sqlops",
+        "tslint": "^5.8.0",
+        "@types/node": "^7.0.43",
+        "@types/mocha": "^2.2.42"
+    },
+    "dependencies": {
+        "@types/lodash": "^4.14.116",
+        "lodash": "^4.17.10"
+    }
+}
